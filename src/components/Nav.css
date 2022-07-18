@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: #e7dfdd;
+  }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  padding: 0px 12px;
+  margin-bottom: 48px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__image--wrapper {
+  height: 50px;
+  width: 50px;
+}
+
+.logo__image {
+  width: 100%;
+}
+
+.logo__title {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  margin: 0 24px;
+}
+
+.nav__link--anchor {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact_btn {
+  background-color: var(--light);
+  border-radius: 9999px;
+  padding: 8px 24px;
+  border: none;
+}
