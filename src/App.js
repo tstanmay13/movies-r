@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from './components/Nav';
 import Home from './pages/Home';
+import Movies from './pages/Movies';
 
 
 
@@ -15,6 +16,7 @@ function App() {
           {/* Home */}
           <Route path="/" exact element={<Home />}/>
           {/* Movies */}
+          <Route path="/movies" exact element={<Movies />}/>
           {/* Movies ID */}
         </Routes>
       </div>

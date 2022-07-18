@@ -2,6 +2,7 @@ import React from 'react';
 import popcorn from "../assets/popcorn.png"
 import "./Nav.css"
 import "../App.css"
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -14,10 +15,10 @@ const Nav = () => {
             </div>
             <ul className="nav__links">
                 <li className="nav__link click">
-                   <a href="#" className="nav__link--anchor link__hover-effect link__hover-effect--light"> <span className="light">Home</span></a>
+                   <Link to="/" className="nav__link--anchor link__hover-effect link__hover-effect--light"> <span className="light">Home</span></Link>
                 </li>
                 <li className="nav__link click">
-                    <a href="./movies.html" className="nav__link--anchor link__hover-effect link__hover-effect--white"> Movies </a>
+                    <Link to="/movies" className="nav__link--anchor link__hover-effect link__hover-effect--white"> Movies </Link>
                  </li>
                  <li className="nav__link">
                     <button className="nav__link--anchor contact_btn click">Contact</button>
