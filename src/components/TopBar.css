@@ -1,0 +1,31 @@
+
+.search__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    margin: 0 auto;
+}
+
+.search__tag {
+  font-size: 24px;
+}
+
+.years__container {
+  width: 30%;
+  min-width: 335px;
+}
+
+.search__years {
+  text-align: center;
+}
+
+.slider__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiSlider-colorPrimary {
+    display: flex;
+  margin-top: 42px !important;
+  padding: 12px !important;
+}
