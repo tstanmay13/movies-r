@@ -76,9 +76,13 @@ h2{
     
 }
 
-.icon{
+.secondary > path{
     color: #a239ca !important;
     font-size: 24px !important;
+}
+
+.search:hover .secondary > path{
+    color: #e7dfdd !important;
 }
 
 

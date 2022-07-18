@@ -17,7 +17,7 @@ const Landing = () => {
 
                     <form className="input">
                         <input id="input__box" type="text" placeholder="Search by title" />
-                        <Button type="submit" className="search"> <SearchIcon color="secondary"/> </Button>
+                        <Button type="submit" className="search"> <SearchIcon className="secondary"/> </Button>
                     </form>
                     <figure className="header__image--wrapper">
                         <img src={landing_image} alt="" className="header__image" />
