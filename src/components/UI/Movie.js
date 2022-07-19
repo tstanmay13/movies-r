@@ -6,15 +6,11 @@ import { useNavigate } from 'react-router';
 
 
 const Movie = ({poster, title, year, type, imdbID}) => {
-
-        // const {data} = await axios.get(`https://www.omdbapi.com/?apikey=93f3f842&i=${imdbID}&plot=full`)
-        // console.log(data)
-
     const navigate = useNavigate()
 
     const handleClick = (event) => {
         event.preventDefault();
-        navigate(`/${imdbID}`)
+        navigate(`/movie/${imdbID}`)
 
     }
 

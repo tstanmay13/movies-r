@@ -6,11 +6,9 @@ import { useParams} from 'react-router';
 
 
 const MovieDesc = () => {
-    // const {id} = useParams();
-
+    const {id} = useParams();
     return (
-            // <IndividualMovie id={id}/>
-            <IndividualMovie/>
+            <IndividualMovie id={id}/>
     );
 }
 
