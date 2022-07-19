@@ -6,7 +6,7 @@ const Search = () => {
     return (
         <section id="search">
             <div className="browse">
-                <h1>Browse movies...</h1>
+                <h1 className="browse__title" >Browse movies...</h1>
                 <div className="input">
                     <input className="input__box2" type="text" placeholder="Search by title" />
                     <SearchIcon className="icon" />

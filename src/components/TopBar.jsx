@@ -4,8 +4,8 @@ import "./TopBar.css"
 
 const Topbar = () => {
     return (
-        <div class="container">
-            <div class="row">
+        <div className="container">
+            <div className="row">
                 <div className="search__bar">
                     <h3 className="search__tag">Search results for</h3>
                     <div className="years__container">
