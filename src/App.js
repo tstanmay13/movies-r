@@ -16,9 +16,9 @@ function App() {
           {/* Home */}
           <Route path="/" exact element={<Home />}/>
           {/* Movies */}
-          <Route path="/movies" exact element={<Movies />}/>
+          <Route path=":search" element={<Movies />}/>
           {/* Movies ID */}
-          <Route path="movies:1" exact element={<MovieDesc/>}/>
+          <Route path=":id"  element={<MovieDesc/>}/>
         </Routes>
       </div>
     </Router>

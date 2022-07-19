@@ -1,4 +1,11 @@
 
+.rowBar {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
 .search__bar {
   display: flex;
   justify-content: space-between;
@@ -17,6 +24,7 @@
 
 .search__years {
   text-align: center;
+  font-size: 24px !important;
 }
 
 .slider__wrapper {

@@ -17,15 +17,11 @@ const Landing = () => {
     const [search, setSearch] = React.useState([])
     const navigate = useNavigate()
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const results = await (await axios(`http://www.omdbapi.com/?apikey=93f3f842&s=${search}`)).data.Search
-        const data = await results.json()
-        console.log(data)
-        // navigate('/movies', {data})
+        navigate(`${search}`)
 
     }
-
 
     return (
         <header id="landing">
@@ -39,6 +35,7 @@ const Landing = () => {
                             id="input__box"
                             type="text"
                             placeholder="Search by title"
+                            value = {search}
                             onChange={(event) => setSearch(event.target.value)} />
                         <Button
                             type="submit"

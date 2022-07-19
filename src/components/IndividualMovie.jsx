@@ -5,7 +5,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from 'react-router-dom';
 
 
-const IndividualMovie = () => {
+const IndividualMovie = ({id}) => {
+    console.log(id)
     return (
         <div className="movieDescription">
             <div className="icon__wrapper"><Link to="/movies"> <ArrowBackIcon className="back__icon"/> </Link></div>
