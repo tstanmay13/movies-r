@@ -23,7 +23,7 @@ const Movies = () => {
 
     async function fetchMovies(id) {
         // setReload(false)
-        const { data } = await axios.get(`http://www.omdbapi.com/?apikey=93f3f842&s=${id || search}`)
+        const { data } = await axios.get(`https://www.omdbapi.com/?apikey=93f3f842&s=${id || search}`)
         const finalResult = data.Search
         setMovies(finalResult)
     }
