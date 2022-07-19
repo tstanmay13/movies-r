@@ -18,9 +18,11 @@ const Movies = () => {
 
     const [movies, setMovies] = React.useState([]);
     const [searchId, setSearchId] = React.useState(search);
+    const [reload, setReload]  = React.useState(false);
 
 
     async function fetchMovies(id) {
+        // setReload(false)
         const { data } = await axios.get(`http://www.omdbapi.com/?apikey=93f3f842&s=${id || search}`)
         const finalResult = data.Search
         setMovies(finalResult)
@@ -30,9 +32,15 @@ const Movies = () => {
         fetchMovies();
     }, [])
 
-    function onSearch(){
-        fetchMovies(searchId);
-       
+
+    React.useEffect(() => {
+        fetchMovies(searchId)
+    }, [reload])
+
+    const onSearch = (event) =>{
+        event.preventDefault();
+        // fetchMovies(searchId)
+        setReload(true)
     }
 
     // console.log(searchId)
@@ -42,21 +50,16 @@ const Movies = () => {
             <section id="search">
                 <div className="browse">
                     <h1 className="browse__title" >Browse movies...</h1>
-                    <div className="input">
+                    <form className="input" onSubmit={onSearch}>
                         <input
                             className="input__box2"
                             type="text"
                             placeholder="Search by title"
                             value={searchId}
                             onChange={(event) => setSearchId(event.target.value)}
-                            onKeyPress={(event) => {
-                                if(event.key === 'Enter'){
-                                    onSearch()
-                                }
-                            }}
                         />
                         <SearchIcon className="icon" />
-                    </div>
+                    </form>
                 </div>
             </section>
 
