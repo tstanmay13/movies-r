@@ -113,7 +113,7 @@ const Movies = () => {
                                 </div>
                             </div>
                             )) :
-                            movies.slice(0,9).map((movie, index) => (
+                            (movies ? movies?.slice(0,9).map((movie, index) => (
                                 <Movie
                                     key={index}
                                     poster={movie.Poster}
@@ -122,7 +122,7 @@ const Movies = () => {
                                     type={movie.Type}
                                     imdbID={movie.imdbID}
                                 />
-                            ))
+                            )) : <div className="DNE"> Movie Doesn't Exist </div>)
                         }
                     </div>
                 </div>
