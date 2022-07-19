@@ -41,6 +41,7 @@ const Movies = () => {
         event.preventDefault();
         // fetchMovies(searchId)
         setReload(true)
+        window.history.replaceState(null, "New Page Title", `${searchId}`)
     }
 
     // console.log(searchId)
