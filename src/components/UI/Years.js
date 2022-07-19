@@ -5,12 +5,16 @@ function valuetext(value) {
     return `${value}°C`;
 }
 
-const Years = ({changeSlider}) => {
+const Years = ({searchId,changeSlider}) => {
     const [value, setValue] = React.useState([1945, 2022])
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
     }
+
+    React.useEffect(() => {
+        setValue([1945,2022])
+    }, [searchId]);
 
     function callParent(){
         changeSlider(value)

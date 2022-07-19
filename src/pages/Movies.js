@@ -87,7 +87,7 @@ const Movies = () => {
                         <div className="years__container">
                             <div className="slider__wrapper">
                                 <h3 className="search__years">Years</h3>
-                                <Years changeSlider={changeYears} className="slider" />
+                                <Years searchId={searchId} changeSlider={changeYears} className="slider" />
                             </div>
                         </div>
                     </div>
