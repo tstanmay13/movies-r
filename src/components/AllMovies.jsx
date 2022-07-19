@@ -33,8 +33,6 @@ const AllMovies = ({search}) => {
                 />
              ))
            }
-
-
           </div>
         </div>
       </div>

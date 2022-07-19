@@ -12,6 +12,12 @@
   font-size: 36px;
 }
 
+form{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
 .input {
   display: flex;
   width: 100%;
