@@ -12,6 +12,7 @@ import Movie from '../components/UI/Movie';
 import axios from 'axios';
 
 
+const MAX_REQUESTS = 9;
 
 const Movies = () => {
     const { search } = useParams();
@@ -19,7 +20,6 @@ const Movies = () => {
     const [movies, setMovies] = React.useState([]);
     const [searchId, setSearchId] = React.useState(search);
     const [loading, setLoading] = React.useState();
-
 
     async function fetchMovies(id) {
         setLoading(true)
@@ -33,11 +33,31 @@ const Movies = () => {
         fetchMovies();
     }, [])
 
-
     const onSearch = (event) =>{
         event.preventDefault();
         fetchMovies(searchId)
         window.history.replaceState(null, "New Page Title", `${searchId}`)
+    }
+
+
+    async function fetchMoviesNoSave(id){
+        const { data } = await axios.get(`https://www.omdbapi.com/?apikey=93f3f842&s=${id || search}`)
+        return data
+
+    }
+
+     const changeYears = async (value) => {
+        setLoading(true)
+        //  console.log(String(value[0]).slice(0,3))
+        const data = await fetchMoviesNoSave(searchId);
+        const filterData = Object.values(data.Search).filter(item => (
+            +String(item.Year).slice(0,4) > value[0] && 
+            +String(item.Year).slice(0,4) < value[1] ))
+        setLoading(false)
+        setMovies(filterData)
+
+        
+
     }
 
     // console.log(searchId)
@@ -67,7 +87,7 @@ const Movies = () => {
                         <div className="years__container">
                             <div className="slider__wrapper">
                                 <h3 className="search__years">Years</h3>
-                                <Years className="slider" />
+                                <Years changeSlider={changeYears} className="slider" />
                             </div>
                         </div>
                     </div>

@@ -1,18 +1,19 @@
 import React from 'react';
 import Slider from "@mui/material/Slider";
-import { styled } from '@mui/material/styles';
-
 
 function valuetext(value) {
     return `${value}°C`;
 }
 
-const Years = () => {
+const Years = ({changeSlider}) => {
     const [value, setValue] = React.useState([1945, 2022])
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
-        console.log(value)
+    }
+
+    function callParent(){
+        changeSlider(value)
     }
 
     return (
@@ -26,6 +27,7 @@ const Years = () => {
                 getAriaValueText={valuetext}
                 min={1945}
                 max={2022}
+                onChangeCommitted={callParent}
             />
         </div>
     );
