@@ -43,6 +43,12 @@
     width: 100%;
     height: 100%;
   }
+
+  .poster--skeleton{
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+  }
   
   .result__description {
     width: 100%;
@@ -61,20 +67,48 @@
     font-size: 22px;
     text-align: center;
   }
+
+  .result__title-s {
+    width: 200px;
+    height: 16px;
+    background-color: lightgray;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
   
   .result__year {
     font-size: 18px;
     padding-bottom: 16px;
     color: black;
   }
+
+  .result__year-s{
+    width: 60px;
+    height: 12px;
+    background-color: lightgray;
+    margin-bottom: 16px;
+  }
   
   .result__type {
     font-size: 14px;
     color: black;
+  }
 
+  .result__type-s {
+    width: 60px;
+    height: 12px;
+    background-color: lightgray;
+    margin-bottom: 4px;
   }
   
   .result__imdb {
     color: black;
     font-size: 12px;
+  }
+
+  .result__imdb-s{
+    width: 80px;
+    height: 12px;
+    background-color: lightgray;
+    margin-bottom: 4px;
   }

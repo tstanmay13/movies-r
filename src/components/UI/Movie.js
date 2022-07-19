@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router';
 
 
 
-const Movie = ({poster, title, year, type, imdbID}) => {
+const Movie = ({ poster, title, year, type, imdbID }) => {
+
     const navigate = useNavigate()
 
     const handleClick = (event) => {
@@ -15,6 +16,7 @@ const Movie = ({poster, title, year, type, imdbID}) => {
     }
 
     return (
+
         <div className="result">
             <div className="result--wrapper" onClick={handleClick}>
                 <figure className="poster__wrapper">
@@ -33,3 +35,5 @@ const Movie = ({poster, title, year, type, imdbID}) => {
 }
 
 export default Movie;
+
+

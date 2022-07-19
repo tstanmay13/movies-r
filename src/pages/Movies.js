@@ -18,14 +18,15 @@ const Movies = () => {
 
     const [movies, setMovies] = React.useState([]);
     const [searchId, setSearchId] = React.useState(search);
-    const [reload, setReload]  = React.useState(false);
+    const [loading, setLoading] = React.useState();
 
 
     async function fetchMovies(id) {
-        // setReload(false)
+        setLoading(true)
         const { data } = await axios.get(`https://www.omdbapi.com/?apikey=93f3f842&s=${id || search}`)
         const finalResult = data.Search
         setMovies(finalResult)
+        setLoading(false)
     }
 
     React.useEffect(() => {
@@ -33,14 +34,9 @@ const Movies = () => {
     }, [])
 
 
-    React.useEffect(() => {
-        fetchMovies(searchId)
-    }, [reload])
-
     const onSearch = (event) =>{
         event.preventDefault();
-        // fetchMovies(searchId)
-        setReload(true)
+        fetchMovies(searchId)
         window.history.replaceState(null, "New Page Title", `${searchId}`)
     }
 
@@ -81,8 +77,23 @@ const Movies = () => {
             <div className="results">
                 <div className="row">
                     <div className="results__container">
-                        {
-                            movies.map((movie, index) => (
+                        {   
+                            loading ? new Array(9).fill(0).map((element,index) => (
+                                <div className="result">
+                                <div className="result--wrapper">
+                                    <figure className="poster__wrapper">
+                                        <img src="" alt="" className="poster--skeleton" />
+                                    </figure>
+                                    <div className="result__description">
+                                        <p className="result__title-s"> </p>
+                                        <p className="result__year-s">  </p>
+                                        <p className="result__type-s">  </p>
+                                        <p className="result__imdb-s">  </p>
+                                    </div>
+                                </div>
+                            </div>
+                            )) :
+                            movies.slice(0,9).map((movie, index) => (
                                 <Movie
                                     key={index}
                                     poster={movie.Poster}
