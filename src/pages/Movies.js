@@ -27,7 +27,7 @@ const Movies = () => {
     }
 
     React.useEffect(() => {
-        fetchMovies(searchId);
+        fetchMovies();
     }, [])
 
     function onSearch(){
