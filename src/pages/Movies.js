@@ -27,7 +27,7 @@ const Movies = () => {
     }
 
     React.useEffect(() => {
-        fetchMovies();
+        fetchMovies(searchId);
     }, [])
 
     function onSearch(){
@@ -42,7 +42,7 @@ const Movies = () => {
             <section id="search">
                 <div className="browse">
                     <h1 className="browse__title" >Browse movies...</h1>
-                    <form className="input">
+                    <div className="input">
                         <input
                             className="input__box2"
                             type="text"
@@ -56,14 +56,14 @@ const Movies = () => {
                             }}
                         />
                         <SearchIcon className="icon" />
-                    </form>
+                    </div>
                 </div>
             </section>
 
             <div className="container">
                 <div className="rowBar">
                     <div className="search__bar">
-                        <h3 className="search__tag">Search results for: <span className="light">{search}</span></h3>
+                        <h3 className="search__tag">Search results for: <span className="light">{searchId}</span></h3>
                         <div className="years__container">
                             <div className="slider__wrapper">
                                 <h3 className="search__years">Years</h3>
