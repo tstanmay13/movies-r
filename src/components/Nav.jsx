@@ -21,7 +21,7 @@ const Nav = () => {
                     <Link to="/movies" className="nav__link--anchor link__hover-effect link__hover-effect--white"> Movies </Link>
                  </li>
                  <li className="nav__link">
-                    <button className="nav__link--anchor contact_btn click">Contact</button>
+                    <a href="https://www.tanmaysingh.net/" target="_blank"><button className="nav__link--anchor contact_btn click">Contact</button></a>
                  </li>
             </ul>
         </nav>

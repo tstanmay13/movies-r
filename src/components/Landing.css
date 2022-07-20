@@ -9,7 +9,7 @@
 }
 
 #landing{
-    min-height: 100vh;
+    min-height: 100vh - 100px;
 }
 .header__container{
     display: flex;

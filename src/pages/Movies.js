@@ -122,7 +122,7 @@ const Movies = () => {
                                     type={movie.Type}
                                     imdbID={movie.imdbID}
                                 />
-                            )) : <div className="DNE"> Movie Doesn't Exist </div>)
+                            )) : <div className="DNE"> This Movie Doesn't Exist! </div>)
                         }
                     </div>
                 </div>
