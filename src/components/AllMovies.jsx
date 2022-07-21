@@ -6,10 +6,12 @@ import { MoveUpOutlined } from '@mui/icons-material';
 const AllMovies = ({search}) => {
     
   const [movies, setMovies] = React.useState([]);
+  console.log("dsdsd")
 
   async function fetchMovies(){
     const {data} = await axios.get(`http://www.omdbapi.com/?apikey=93f3f842&s=${search}`)
     const finalResult = data.Search
+    console.log(finalResult)
     setMovies(finalResult)
   }
 

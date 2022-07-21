@@ -25,8 +25,8 @@ const Movie = ({ poster, title, year, type, imdbID }) => {
                 <div className="result__description">
                     <p className="result__title"> {title} </p>
                     <p className="result__year"> {year} </p>
-                    <p className="result__type"> {type} </p>
-                    <p className="result__imdb"> {imdbID} </p>
+                    <p className="result__type"> Type:{type} </p>
+                    <p className="result__imdb"> IMDb ID:{imdbID} </p>
                 </div>
             </div>
         </div>
